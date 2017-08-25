@@ -33,6 +33,12 @@ function render(data) {
     });
 }
 
+$(document).on('click', '.result__name', function () {
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+
+    alert('h')
+})
 
 
 $(document).on('click', '#search', function (e) {
@@ -53,9 +59,3 @@ $(document).ready(function () {
     //$('#location, #latitude, #longitude').val('');
 })
 
-$(document).on('click', '.result__name', function () {
-    $(this).toggleClass('active');
-    $(this).next().slideToggle();
-
-    alert('h')
-})
