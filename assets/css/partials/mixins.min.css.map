@@ -1,0 +1,1 @@
+{"version":3,"file":"mixins.min.css","sources":["partials/mixins.scss"],"sourcesContent":["@mixin element($element){\r\n    &__#{$element} {\r\n        @content\r\n    }\r\n}\r\n\r\n@mixin modifier($modifier) {\r\n    &--#{$modifier} {\r\n        @content\r\n    }\r\n}"],"names":[],"mappings":""}

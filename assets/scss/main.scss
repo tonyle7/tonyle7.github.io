@@ -1,0 +1,117 @@
+@import 'assets/scss/partials/mixins.scss';
+
+$color1: #005f95;
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana;
+    color: $color1;
+}
+
+.header {
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.logo {
+    max-width: 257px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.form {
+    padding: 10px;
+    width: 100%;
+    float: left;
+    border: solid 2px $color1;
+    font-size: 25px;
+    color: $color1;
+
+    &:focus {
+        border: solid 2px #eee;
+    }
+}
+
+.button-container {
+    float: left;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.results {
+    float: left;
+    width: 100%;
+}
+
+.btn {
+    background-color: $color1;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+}
+
+.recommended {
+    padding: 0;
+    width: 100%;
+    float: left;
+
+
+    @include element('item') {
+        list-style-type: none;
+        padding: 10px 20px;
+        width: 100%;
+        float: left;
+
+        @include modifier('link') {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        &:nth-of-type(odd) {
+            background-color: $color1;
+            color: #fff;
+        }
+
+        &:nth-of-type(even) {
+            color: $color1;
+
+            a {
+                color: $color1;
+            }
+        }
+    }
+}
+
+.results__length {
+    width: 100%;
+    text-align: right;
+    float: left;
+    padding: 10px 0;
+}
+
+.distance {
+    float: right;
+}
+
+.result__detail{
+    display: none;
+}
+
+.active{
+    font-weight: bold;
+}
