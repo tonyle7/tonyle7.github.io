@@ -15,8 +15,6 @@ function render(data) {
     $.each(data.response.groups, function (idx, val) {
         $('.results').prepend('<div class="results__length"><em>' + val.items.length + '</em>' + ' recommended places found</div>')
 
-        //console.log(data.response.groups.items.venue.location.distance)
-
         $.each(val.items, function (idx2, val2) {
 
             var d = val2.venue.location.distance / 1609.344;            
@@ -33,14 +31,6 @@ function render(data) {
     });
 }
 
-$(document).on('click', 'body', function () {
-    $(this).toggleClass('active');
-    $(this).next().slideToggle();
-
-    alert('h')
-})
-
-
 $(document).on('click', '#search', function (e) {
     e.preventDefault();
 
@@ -56,6 +46,10 @@ $(document).on('click', '#search', function (e) {
 
 $(document).ready(function () {
     getLocationFromGoogle();
-    //$('#location, #latitude, #longitude').val('');
-})
+    $('#location, #latitude, #longitude').val('');
+});
 
+$(document).on('click', '.result__name', function () {
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+});
