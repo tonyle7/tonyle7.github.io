@@ -19,8 +19,6 @@ function render(data) {
 
         $.each(val.items, function (idx2, val2) {
 
-            $('.recommended__item').append(data.response.groups.)
-
             var d = val2.venue.location.distance / 1609.344;            
             var distance = val2.venue.location.distance != undefined ? '<span class="distance">' + d.toFixed(2) + ' miles </span>' : '';
             var address = $.makeArray(val2.venue.location.formattedAddress).join('<br />');
@@ -28,7 +26,7 @@ function render(data) {
 
             var resultItem = '';
 
-            //resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + url + '</div>' + '</div>';
+            resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + url + '</div>' + '</div>';
 
             $('.recommended').append(resultItem);
         })
