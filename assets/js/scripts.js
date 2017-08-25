@@ -33,7 +33,7 @@ function render(data) {
     });
 }
 
-$(document).on('click', '.result__name', function () {
+$(document).on('click', 'body', function () {
     $(this).toggleClass('active');
     $(this).next().slideToggle();
 
