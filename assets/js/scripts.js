@@ -15,7 +15,11 @@ function render(data) {
     $.each(data.response.groups, function (idx, val) {
         $('.results').prepend('<div class="results__length"><em>' + val.items.length + '</em>' + ' recommended places found</div>')
 
+        //console.log(data.response.groups.items.venue.location.distance)
+
         $.each(val.items, function (idx2, val2) {
+
+            $('.recommended__item').append(data.response.groups.)
 
             var d = val2.venue.location.distance / 1609.344;            
             var distance = val2.venue.location.distance != undefined ? '<span class="distance">' + d.toFixed(2) + ' miles </span>' : '';
@@ -24,7 +28,7 @@ function render(data) {
 
             var resultItem = '';
 
-            resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + url + '</div>' + '</div>';
+            //resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + url + '</div>' + '</div>';
 
             $('.recommended').append(resultItem);
         })
@@ -54,4 +58,6 @@ $(document).ready(function () {
 $(document).on('click', '.result__name', function () {
     $(this).toggleClass('active');
     $(this).next().slideToggle();
+
+    alert('h')
 })
