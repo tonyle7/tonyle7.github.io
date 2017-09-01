@@ -20,11 +20,13 @@ function render(data) {
             var d = val2.venue.location.distance / 1609.344;            
             var distance = val2.venue.location.distance != undefined ? '<span class="distance">' + d.toFixed(2) + ' miles </span>' : '';
             var address = $.makeArray(val2.venue.location.formattedAddress).join('<br />');
-            var url = val2.venue.url != undefined ? '<div class="url">' + '<a href="' + val2.venue.url + '">Website</a>' + '</div>' : '';
+            var url = val2.venue.url != undefined ? '<li class="social-item url">' + '<a href="' + val2.venue.url + '"><img src="/assets/img/url.png "/></a>' + '</li>' : '';
+            var twt = val2.venue.contact.twitter != undefined ? '<li class="social-item twitter">' + '<a href="http://www.twitter.com/' + val2.venue.contact.twitter + '"><img src="/assets/img/twitter.png "/></a>' + '</li>' : '';
+            var fb = val2.venue.contact.facebook != undefined ? '<li class="social-item facebook">' + '<a href="http://www.facebook.com/' + val2.venue.contact.facebook + '"><img src="/assets/img/fb.png "/></a>' + '</li>' : '';
 
             var resultItem = '';
-
-            resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + url + '</div>' + '</div>';
+            console.log(val2.venue.contact)
+            resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + '<div class="social-media"><ul class="social">' + url + twt + fb + '</ul></div>' + '</div>' + '</div>';
 
             $('.recommended').append(resultItem);
         })

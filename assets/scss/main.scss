@@ -108,10 +108,30 @@ body {
     float: right;
 }
 
-.result__detail{
+.result__detail {
     display: none;
+    padding: 10px 0;
+    width: 100%;
+    float: left;
 }
 
-.active{
+.active {
     font-weight: bold;
+}
+
+.social {
+    padding: 0;
+}
+
+.social-item {
+    display: inline-block;
+    padding: 5px 5px 0 5px;
+
+    &:first-of-type {
+        padding: 5px 5px 0px 0;
+    }
+
+    &:last-of-type {
+        padding: 5px 0 0px 5px;
+    }
 }
