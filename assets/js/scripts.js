@@ -17,7 +17,7 @@ function render(data) {
 
         $.each(val.items, function (idx2, val2) {
 
-            var d = val2.venue.location.distance / 1609.344;            
+            var d = val2.venue.location.distance / 1609.344;
             var distance = val2.venue.location.distance != undefined ? '<span class="distance">' + d.toFixed(2) + ' miles </span>' : '';
             var address = $.makeArray(val2.venue.location.formattedAddress).join('<br />');
             var url = val2.venue.url != undefined ? '<li class="social-item url">' + '<a href="' + val2.venue.url + '"><img src="/assets/img/url.png "/></a>' + '</li>' : '';
@@ -52,6 +52,15 @@ $(document).ready(function () {
 });
 
 $(document).on('click', '.result__name', function () {
-    $(this).toggleClass('active');
-    $(this).next().slideToggle();
+
+    var isActive = $(this).hasClass('active');
+
+    $('.active').next('.result__detail').slideUp();
+    $('.result__name').removeClass('active');
+
+    if (isActive)
+        return
+
+    $(this).next().slideDown();
+    $(this).addClass('active')
 });
