@@ -108,6 +108,10 @@ body {
     float: right;
 }
 
+.result__name {
+    cursor: pointer;
+}
+
 .result__detail {
     display: none;
     padding: 10px 0;
