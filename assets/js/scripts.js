@@ -1,4 +1,7 @@
 $(document).on('click', '.result__name', function () {
+
+    console.log('hello')
+
     var isActive = $(this).hasClass('active');
 
     $('.active').next('.result__detail').slideUp();
@@ -38,7 +41,7 @@ function render(data) {
             var fb = val2.venue.contact.facebook != undefined ? '<li class="social-item facebook">' + '<a href="http://www.facebook.com/' + val2.venue.contact.facebook + '"><img src="/assets/img/fb.png "/></a>' + '</li>' : '';
 
             var resultItem = '';
-            console.log(val2.venue.contact)
+
             resultItem = '<div class="recommended__item">' + '<div class="result__name"> ' + val2.venue.name + distance + '</div>' + '<div class="result__detail">' + address + '<div class="social-media"><ul class="social">' + url + twt + fb + '</ul></div>' + '</div>' + '</div>';
 
             $('.recommended').append(resultItem);
