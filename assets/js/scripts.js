@@ -1,3 +1,16 @@
+$(document).on('click', '.result__name', function () {
+    var isActive = $(this).hasClass('active');
+
+    $('.active').next('.result__detail').slideUp();
+    $('.result__name').removeClass('active');
+
+    if (isActive)
+        return
+
+    $(this).next().slideDown();
+    $(this).addClass('active')
+});
+
 function getLocationFromGoogle() {
     var input = document.getElementById('location');
     var autocomplete = new google.maps.places.Autocomplete(input);
@@ -51,16 +64,3 @@ $(document).ready(function () {
     $('#location, #latitude, #longitude').val('');
 });
 
-$(document).on('click', '.result__name', function () {
-
-    var isActive = $(this).hasClass('active');
-
-    $('.active').next('.result__detail').slideUp();
-    $('.result__name').removeClass('active');
-
-    if (isActive)
-        return
-
-    $(this).next().slideDown();
-    $(this).addClass('active')
-});
